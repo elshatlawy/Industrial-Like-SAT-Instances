@@ -1,0 +1,45 @@
+﻿Double Power-Law: A model where clause lengths are drawn according to a power-law
+distribution. Then variables per clause are drawn according to a (possibly different)
+power-law probability distribution.
+
+
+Input: n,m,k,ßv,ßc  
+
+output: a SAT instance with n variables, m clauses
+
+n = number of variables
+m = number of clauses
+k = average number of literals == clause length
+ßv = probability distribution for variables
+(power law exponent for variable occurence)
+ßc = probability distribution for clauses
+(power law exponent for clause length)
+
+rand() := returns a real random number uniformly distributed in [0,1)
+(probability for postive literal in constraint)
+rand(2) := return either 0 or 1 with probability 1/2
+(ratio of 1's in the solution)
+
+
+Algorithm:
+
+
+for i = 1 to m do
+	Ci := [];
+for i = 1 to k * m do
+	repeat
+		p := rand(); v := 1;
+		while p > P(v;ßv,n) do
+			p := p - P(v;b,n); v := v + 1;
+		endwhile
+		p := rand(); c := 1;
+		while p > P(c;ßc,m) do
+			p := p - P(v;b,n); c := c + 1;
+		endwhile
+	while v € Cc
+	Cc := Cc or (-1)^(rand(2)) . v;
+endfor
+
+
+End;
+
