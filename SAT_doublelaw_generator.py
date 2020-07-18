@@ -247,5 +247,3 @@ prob_sol = 0.5
 # Start the generation of the SAT problem and its solution
 SAT_gen()
     
-
-       
