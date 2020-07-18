@@ -3,7 +3,7 @@
 #from os import listdir
 import os 
 
-path = 'I:/J-Z/RD-RTM/20_Mitarbeiter/Elshatlawy/SAT_NP/20181019_20' # add path
+path = '' # add path
 
 folder = os.fsencode(path)
 
